@@ -2,11 +2,12 @@ import React from 'react';
 import './TrelloList.css';
 import TrelloCard from '../TrelloCard/TrelloCard'
 
-const TrelloList = ({title})=>{
+const TrelloList = ({title,cards})=>{
     return(
        <div className="list_container">
            <h3>{title}</h3>
-           <TrelloCard/>
+           {cards.map(card=>
+           <TrelloCard text={card.text}/>)}
        </div>
     )
 }
