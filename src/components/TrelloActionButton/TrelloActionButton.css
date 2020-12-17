@@ -1,0 +1,21 @@
+.cardcontainer{
+    overflow: "visible";
+    min-width: 250;
+    min-height: 80px;
+    padding: 4px 8px 2px;
+
+}
+.buttonblock{
+    color:"white";
+    background-color: #5aac44;
+}
+
+.closeblock{
+    margin: 8px;
+    cursor: pointer;
+}
+.formbuttongroup{
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
