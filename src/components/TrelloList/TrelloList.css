@@ -1,6 +1,7 @@
 .list_container{
-    background-color: 	#808080;
+    background-color: 	#dfe3e6;
     border-radius: 3px;
-    width:300px;
-    padding: 4px;
+    width:250px;
+    padding: 6px;
+    margin-right: 8px;
 }

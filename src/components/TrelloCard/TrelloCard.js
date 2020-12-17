@@ -1,12 +1,15 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
+import CardContent from '@material-ui/core/CardContent';
+import './TrelloCard.css'
 
-
-const TrelloCard =()=>{
+const TrelloCard =({text})=>{
     return(
-        <Card >
-          <Typography>Word of the Day</Typography>
+        <Card className="trellocard" >
+          <CardContent>
+            <Typography>{text}</Typography>
+          </CardContent>
         </Card>
     )
 }
