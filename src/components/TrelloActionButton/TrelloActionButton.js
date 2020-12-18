@@ -60,7 +60,7 @@ class TrelloActionButton extends Component {
 
     addForm =()=>{
         const {list} = this.props;
-        const formText = list ? "Enter list title":"Enter card title"
+        const formText = list ? "Enter list title.":"Enter card text."
         const buttonTitle = list ? "Add List":"Add Card";
         return <div>
             <Card className="cardcontainer">
