@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import './TrelloActionButton.css';
 import CloseIcon from '@material-ui/icons/Close';
+import {connect} from 'react-redux';
+import {addList,addCard} from '../../actions'
 
 class TrelloActionButton extends Component {
 
@@ -37,6 +39,24 @@ class TrelloActionButton extends Component {
     handleInputChange =e=>{
         this.setState({text:e.target.value})
     }
+    handleAddList =()=>{
+        const {dispatch} =this.props
+        const {text} = this.state
+        if(text){
+            this.setState({text:""})
+            dispatch(addList(text))
+        }
+        return;
+    }
+    handleAddCard = ()=>{
+        const {dispatch,listID}= this.props
+        const {text} = this.state
+        if(text){
+            this.setState({text:""})
+            dispatch(addCard(listID,text))
+        }
+        return;
+    }
 
     addForm =()=>{
         const {list} = this.props;
@@ -63,6 +83,7 @@ class TrelloActionButton extends Component {
                 <Button 
                     className="buttonblock" 
                     variant="contained" 
+                    onMouseDown={list?this.handleAddList:this.handleAddCard}
                     style={{ 
                         color:"white",
                         backgroundColor: "#5aac44"
@@ -88,4 +109,4 @@ const styles={buttongroup:{
     paddingleft:10
 },}
 
-export default TrelloActionButton
+export default connect()(TrelloActionButton);
